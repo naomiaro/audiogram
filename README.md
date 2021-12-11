@@ -51,6 +51,12 @@ If you want to use a different port number, you can supply it in the command. Fo
 > docker run -p 8888:8888 -t -i audiogram
 ```
 
+With Redis
+```sh
+> docker run --name audiogram-redis -d redis
+> docker run -p 8888:8888 -it --rm --link audiogram-redis:redis --env REDIS_URI=redis audiogram
+```
+
 ## The editor
 
 ![Audiogram Editor](https://cloud.githubusercontent.com/assets/2120446/17450988/7e6c4ea2-5b31-11e6-8f90-b32fec6864c3.gif)
